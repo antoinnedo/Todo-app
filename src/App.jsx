@@ -1,7 +1,21 @@
+import { Header } from "./components/Header";
+import { Tabs } from "./components/Tabs";
+import { TodoInput } from "./components/TodoInput";
+import { TodoList } from "./components/TodoList";
+
 function App() {
   const x = 3;
 
-  return <div>{x}</div>;
+  return (
+    <div>
+      
+      <Header/>
+      <Tabs />
+      <TodoList />
+      <TodoInput />
+
+    </div>
+  )
 }
 
 export default App;
