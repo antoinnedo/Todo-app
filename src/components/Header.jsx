@@ -10,5 +10,5 @@ export function Header(props) {
     <header>
       <h1 className="text-gradient">You have {todoLength} open {taskOrTasks}.</h1>
     </header>
-  );
+  )
 }

@@ -1,13 +1,13 @@
 import { TodoCard } from "./TodoCard";
 
+//changing the list
 export function TodoList(props) {
-  const { todos } = props
+  const { todos, selectedTab, handleDeleteTodo } = props
 
-  const tab = 'Completed'
-
-  const filterTodosList = tab === 'All' ?
+  //changing the list when switching tabs
+  const filterTodosList = selectedTab === 'All' ?
     todos :
-    tab === 'Completed' ?
+    selectedTab === 'Completed' ?
       todos.filter(val => val.complete) :
       todos.filter(val => !val.complete)
 
@@ -18,10 +18,12 @@ export function TodoList(props) {
         return (
           <TodoCard 
             key={todoIndex} 
+            todoIndex={todoIndex}
+            {...props}
             todo = {todo}/>
         )
       })}
 
     </>
-  );
-  }
+  )
+}
